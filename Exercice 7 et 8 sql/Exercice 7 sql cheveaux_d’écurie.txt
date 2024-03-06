@@ -1,0 +1,17 @@
+1 - select * from chevauxdecurie.chevaux;
+2 - select * from chevauxdecurie.chevaux where race = 'Arabian'
+ORDER BY nom DESC;
+
+3 - select nom, tailleType, Poidstype from chevauxdecurie.chevaux where race = 'Arabian'
+ORDER BY nom DESC;
+
+4 - select DISTINCT proprietaire from chevauxdecurie.proprietaires;
+    select DISTINCT p.nom from chevauxdecurie.proprietaires p
+    join chevauxdecurie.chevaux c ON p.id = c.proprietaire_id;
+
+5 - select nom from chevauxdecurie.employes where superieur_id IS NULL;
+
+6 - select * from chevauxdecurie.concours where YEAR(date_concours) = 2019;
+
+
+  

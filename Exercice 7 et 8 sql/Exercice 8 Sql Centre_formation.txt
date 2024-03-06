@@ -1,0 +1,17 @@
+1 - select COUNT(*) AS nombre_etudiants FROM étudiants;
+
+2 - select nom, prenom, TIMESTAMPDIFF(YEAR, date_naissance, CURDATE()) AS age FROM étudiants;
+
+3 - Plus chère : select nom_formation, MAX(prix) AS prix_max FROM formations;
+
+    Moins chère : select nom_formation, MIN(prix) AS prix_min FROM formations;
+
+4 - select SUM(prix) AS cout_total FROM formations;
+
+5 - select id_formation, COUNT(id_etudiant) AS nombre_etudiants FROM inscriptions GROUP BY id_formation;
+
+6 - select DISTINCT cin FROM étudiants WHERE id_etudiant IN (SELECT id_etudiant FROM inscriptions);
+
+7 - select e.id_etudiant, e.nom, e.prenom, COUNT(i.id_inscription) AS nombre_inscriptions FROM étudiants e JOIN inscriptions i ON e.id_etudiant = i.id_etudiant GROUP BY e.id_etudiant;
+
+8 - select id_formation, type_session, COUNT(*) AS nombre_inscriptions FROM inscriptions GROUP BY id_formation, type_session;
